@@ -1,2 +1,4 @@
 # CUHackit
-Project for hacking it
+IdleClickerGpt is a web based idle game designed to be a parody of the Artificial Intelligence industry. The player plays as a CEO of an unnammed company, starting out with a modest balance of 8 billion dollars to grow their company. The game vissually demonstrates the effects of the industry by killing a herd of cows as the player builds more data centers. Data centers produce vibecoded projects which can be exchanged for Government funding. Government funding is used to purchase more data centers. 
+
+The purpose of the game is to create awareness of the envirnmental effects of AI in an entertaining way. 
