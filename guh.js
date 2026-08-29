@@ -8,11 +8,30 @@ function calculateVibecodedProjects(vibecodedProjects, datacenterProjectsPerSec,
     return vibecodedProjects;
 }
 
-function displayInfo(govtFunding, vibecodedProjects, population){
+function placeDataCenter() {
+    const grass = document.getElementById('grass');
+    let datacenterContainer = document.createElement("div");
+    grass.appendChild(datacenterContainer);
+    let img = document.createElement("img");
+    img.src = "./assets/dataCenter.png";
+    img.style.width = "80px";
+    img.style.height = "80px";
+    datacenterContainer.style.zIndex = "-1";
+    datacenterContainer.appendChild(img);
 
 }
 
-function guh(){
+function displayText(element, text) {
+    document.getElementById(element).innerHTML = text;
+}
+
+function updateInfo(population, vibecodedProjects, govtFunding) {
+    displayText("populationCounter", "Population: " + population);
+    displayText("fundingCounter", "Government Funds: " + govtFunding);
+    displayText("vibeCoderCounter", "Vibecoded Projects: " + vibecodedProjects);
+}
+
+function guh() {
     let datacenters = 0;
     let govtFunding = 8000;
     let vibecodedProjects = 0;
@@ -25,31 +44,49 @@ function guh(){
     buyButton.addEventListener('click', () => {
         incrementDatacenters(govtFunding, datacenters, datacenterPrice);
         console.log(govtFunding, datacenters);
-    } );
+    });
 
     let sellButton = document.getElementById('vibeButton');
-    sellButton.addEventListener('click', () =>{
+    sellButton.addEventListener('click', () => {
         govtFunding += vibecodedProjectExchange * vibecodedProjects;
         vibecodedProjects = 0;
     })
 
-    function incrementDatacenters(){
-        if (govtFunding >= datacenterPrice){
+    function incrementDatacenters() {
+        if (govtFunding >= datacenterPrice) {
             govtFunding -= datacenterPrice;
             datacenters++;
+
+            placeDataCenter();
+
+            let grass = document.getElementById("grass")
+            let r = 70;
+            let g = 194;
+            let b = 84;
+
+            let changedg = g / (datacenters);
+            let color = ("rgb(" + r + "," + changedg + "," + b + ");");
+            let newBackgroundColor = color.toString();
+            grass.style.backgroundColor = newBackgroundColor;
+
+            if (datacenters > 6) {
+                document.getElementById("cows").remove();
+            }
+
+
             datacenterPrice = (1.1 * datacenters * datacenters) + 400;
         }
     }
 
 
-        let cows = document.querySelectorAll('.cow');
+    let cows = document.querySelectorAll('.cow');
     cows.forEach(cow => {
         let randomTop = Math.random() * 80;
         let randomLeft = Math.random() * 80;
         cow.style.top = randomTop + '%';
         cow.style.left = randomLeft + '%';
     });
-         let clouds = document.querySelectorAll('.cloud');
+    let clouds = document.querySelectorAll('.cloud');
     clouds.forEach(cloud => {
         let randomTop = Math.random() * 80;
         let randomLeft = Math.random() * 80;
@@ -60,24 +97,27 @@ function guh(){
 
     const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
     const tickTime = 33; //time a tick takes
-    const dt = 1/30; //delta t, change in time
+    const dt = 1 / 30; //delta t, change in time
     let t = 0 //initial time
 
     async function mainLoop() {
-        while(true) {
+        while (true) {
             population = calculatePop(datacenters, population, dt);
             vibecodedProjects = calculateVibecodedProjects(vibecodedProjects, datacenterProjectsPerSec, datacenters, dt);
+            updateInfo(Math.floor(population) + "00", Math.floor(vibecodedProjects), Math.floor(govtFunding * 10) / 10);
 
-            displayInfo();
             console.log(t, govtFunding, datacenters, population);
             t += (dt)
+            if (population <= 0) { break; }
             await sleep(tickTime);
         }
+        document.getElementById("population").innerHTML = "Game Over!";
     }
+
     mainLoop();
 }
 
-window.onload = function(){
+window.onload = function () {
     console.log("loaded");
     guh();
 }
