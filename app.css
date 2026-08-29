@@ -2,6 +2,7 @@ body{
 background-color: #80A6FF;
 }
 
+
 .cows{
 
  asset-path: url('./assets/cowA.png');
@@ -63,6 +64,8 @@ background-color: #80A6FF;
     z-index: 10;
 
 }
+
+
 .vibeButton{
     background-color: #e8e9ec;
     position: fixed;
@@ -92,8 +95,23 @@ background-color: #80A6FF;
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
-    font-color: #e8e9ec;
+    color: #1b1b1b;
     z-index: 10;
+}
+
+.dataCenter{
+    background-color:#7f8490;
+    width: 8%;
+    height: 4%;
+
+}
+
+.pond{
+    background-color:#3765d3;
+    clip-path: ellipse(60px 40px);
+    bottom: 40%;
+    left: 60%;
+    position: fixed;
 }
 
 .fundingCounter{
