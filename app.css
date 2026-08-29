@@ -2,6 +2,29 @@ body{
 background-color: #80A6FF;
 }
 
+.cows{
+
+ asset-path: url('./assets/cowA.png');
+ max-width: 15%;
+ max-height: 15%;
+ animation-name: moveBackAndForth;
+ animation-duration: 10s;
+ animation-iteration-count: infinite;
+ animation-direction: alternate;
+ animation-timing-function: ease-in-out;
+
+}
+
+
+ @keyframes moveBackAndForth {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(600px);
+            }
+        }
+
 .grass {
   background-color: #46c254;
   position: fixed;
@@ -26,10 +49,9 @@ background-color: #80A6FF;
 .dataButton{
     background-color: #e8e9ec;
     position: fixed;
-    left: 87.5%;
     bottom: 5%;
     height: 10%;
-    width: 12.5%;
+    width: 25%;
     border: 2px solid #4a505a;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px 32px;
@@ -40,5 +62,67 @@ background-color: #80A6FF;
     cursor: pointer;
     z-index: 10;
 
+}
+.vibeButton{
+    background-color: #e8e9ec;
+    position: fixed;
+    bottom: 20%;
+    height: 10%;
+    width: 25%;
+    border: 2px solid #4a505a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+
+}
+
+.populationCounter{
+    background-color: #7f8490;
+    position: fixed;
+    top: 0%;
+    height: .5%;
+    width: 25%;
+    border: 2px solid #7f8490;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-color: #e8e9ec;
+    z-index: 10;
+}
+
+.fundingCounter{
+    background-color: #e8e9ec;
+    position: fixed;
+    top: 10%;
+    height: 5%;
+    width: 25%;
+    border: 2px solid #4a505a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.vibeCoderCounter{
+  background-color: #e8e9ec;
+    position: fixed;
+    top: 15%;
+    height: 5%;
+    width: 25%;
+    border: 2px solid #4a505a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    z-index: 10;
 }
 
