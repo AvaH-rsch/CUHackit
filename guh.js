@@ -41,6 +41,23 @@ function guh(){
         }
     }
 
+
+        let cows = document.querySelectorAll('.cow');
+    cows.forEach(cow => {
+        let randomTop = Math.random() * 80;
+        let randomLeft = Math.random() * 80;
+        cow.style.top = randomTop + '%';
+        cow.style.left = randomLeft + '%';
+    });
+         let clouds = document.querySelectorAll('.cloud');
+    clouds.forEach(cloud => {
+        let randomTop = Math.random() * 80;
+        let randomLeft = Math.random() * 80;
+        cloud.style.top = randomTop + '%';
+        cloud.style.left = randomLeft + '%';
+    });
+
+
     const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
     const tickTime = 33; //time a tick takes
     const dt = 1/30; //delta t, change in time
