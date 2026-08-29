@@ -4,16 +4,20 @@ background-color: #80A6FF;
 
 
 .cows{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
- asset-path: url('./assets/cowA.png');
- max-width: 15%;
- max-height: 15%;
- animation-name: moveBackAndForth;
- animation-duration: 10s;
- animation-iteration-count: infinite;
- animation-direction: alternate;
- animation-timing-function: ease-in-out;
-
+.cow{
+    max-width: 8%;
+    max-height: 8%;
+    position: absolute;
+    animation-name: moveBackAndForth;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 }
 
 
@@ -107,11 +111,18 @@ background-color: #80A6FF;
 }
 
 .pond{
-    background-color:#4268c1;
-    clip-path: ellipse(60px 40px);
-    bottom: 40%;
-    left: 60%;
-    position: fixed;
+height: 18px;
+  width: 140px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  margin: 0 5px 0 5px;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #322fd3;
 }
 
 .fundingCounter{

@@ -6,6 +6,7 @@ function guh(){
     let datacenterPrice = 400;
     let dataCenterProjectsPerSec = 1;
 
+
     let button = document.getElementById('dataButton');
     button.addEventListener('click', () => {
         incrementDatacenters(govtFunding, datacenters, datacenterPrice);
@@ -17,6 +18,10 @@ function guh(){
             govtFunding -= datacenterPrice;
             datacenters++;
         }
+    }
+
+    function randomCow(){
+        
     }
 
     const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
