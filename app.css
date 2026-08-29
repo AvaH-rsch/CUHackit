@@ -101,6 +101,23 @@ background-color: #80A6FF;
     z-index: 10;
 
 }
+.twitterButton{
+    background-color: #e8e9ec;
+    position: fixed;
+    bottom: 40%;
+    height: 30%;
+    width: 25%;
+    border: 2px solid #4a505a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+
+}
 
 .populationCounter{
     background-color: #7f8490;
